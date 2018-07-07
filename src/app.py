@@ -3,7 +3,7 @@ from flask import Flask, render_template
 from src.common.database import Database
 
 app = Flask(__name__)
-app.config.from_object('config')
+app.config.from_pyfile('config.py')
 app.secret_key = "123"
 
 
