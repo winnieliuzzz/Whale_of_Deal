@@ -1,7 +1,7 @@
-
+import os
 
 DEBUG = True
 ADMINS = frozenset([
-    "winnieliuzzz@gmail.com"
+    os.environ.get('ADMIN_EMAIL')
 ])
 DOMAIN = "pricing.jslvtr.com"
