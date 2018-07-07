@@ -3,13 +3,14 @@ import pymongo
 
 
 class Database(object):
-    URI = os.environ.get("MONGOLAB_URI")
+    URI = os.environ.get("MONGOLAB_URI", 'mongodb://localhost:27017/fullstack')
     DATABASE = None
 
     @staticmethod
     def initialize():
         client = pymongo.MongoClient(Database.URI)
-        Database.DATABASE = client.get_database()
+        Database.DATABASE = client['heroku_6z9zfq6j']
+        print(Database.DATABASE.collection_names())
 
     @staticmethod
     def insert(collection, data):
