@@ -1,6 +1,6 @@
 import os
-
 import pymongo
+
 
 class Database(object):
     URI = os.environ.get("MONGOLAB_URI")
@@ -9,7 +9,7 @@ class Database(object):
     @staticmethod
     def initialize():
         client = pymongo.MongoClient(Database.URI)
-        Database.DATABASE = client['heroku_6z9zfq6j']
+        Database.DATABASE = client.get_database()
 
     @staticmethod
     def insert(collection, data):
