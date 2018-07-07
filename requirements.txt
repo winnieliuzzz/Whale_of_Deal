@@ -4,4 +4,4 @@ beautifulsoup4 == 4.6.0
 passlib == 1.7.1
 werkzeug == 0.14.1
 requests == 2.7.0
-
+uwsgi == 2.0.17
