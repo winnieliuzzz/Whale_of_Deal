@@ -3,7 +3,7 @@ import pymongo
 
 
 class Database(object):
-    URI = "mongodb://whaleofdeal:passforwhaleofdeal123@ds229701.mlab.com:29701/heroku_6z9zfq6j"#os.environ.get("MONGOLAB_URI")
+    URI = os.environ.get("MONGODB_URI")
     DATABASE = None
 
     @staticmethod
