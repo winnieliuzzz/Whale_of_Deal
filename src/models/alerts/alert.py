@@ -4,7 +4,6 @@ import requests
 import src.models.alerts.constants as AlertConstants
 from src.common.database import Database
 from src.models.items.item import Item
-from src.app import app
 import smtplib
 from email.message import EmailMessage
 
