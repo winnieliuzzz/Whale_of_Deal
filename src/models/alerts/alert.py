@@ -20,7 +20,7 @@ class Alert:
     def __repr__(self):
         return "<Alert for {} on item {} with price {}>".format(self.user_email, self.item.name, self.price_limit)
 
-    def send(self ,gmail, password):
+    def send(self, gmail, password):
         email = EmailMessage()
         email['Subject'] = "Price for {0} is now ${1}".format(self.item.name, self.item.price)
         email['From'] = "WhaleofDeal"
@@ -28,8 +28,10 @@ class Alert:
         content = "It's A Deal!\n {0}\n {1} \n To navigate to the alert, visit {2}".format(self.item.name, self.item.url, "https://whaleofdeal.herokuapp.com/alerts/{}".format(self._id))
         email.set_content(content)
 
-        s = smtplib.SMTP(host='smtp.gmail.com', port=587)
+        s = smtplib.SMTP(host='smtp.gmail.com', port=25)
         s.starttls()
+        print(gmail)
+        print(password)
         s.login(gmail, password)
 
         s.send_message(email)
