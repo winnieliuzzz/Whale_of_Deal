@@ -30,8 +30,6 @@ class Alert:
 
         s = smtplib.SMTP(host='smtp.gmail.com', port=25)
         s.starttls()
-        print(gmail)
-        print(password)
         s.login(gmail, password)
 
         s.send_message(email)
