@@ -22,10 +22,10 @@ class Alert:
 
     def send(self, gmail, password):
         email = EmailMessage()
-        email['Subject'] = "Price for {0} is now ${1}".format(self.item.name, self.item.price)
+        email['Subject'] = "Price is now ${1} for {0}".format(self.item.name, self.item.price)
         email['From'] = "WhaleofDeal"
         email['To'] = self.user_email
-        content = "It's A Deal!\n {0}\n {1} \n To navigate to the alert, visit {2}".format(self.item.name, self.item.url, "https://whaleofdeal.herokuapp.com/alerts/{}".format(self._id))
+        content = "It's A Deal!\n {0}\n {1} \n".format(self.item.name, self.item.url)
         email.set_content(content)
 
         s = smtplib.SMTP(host='smtp.gmail.com', port=25)
